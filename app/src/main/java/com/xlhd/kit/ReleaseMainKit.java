@@ -40,10 +40,10 @@ public class ReleaseMainKit {
       if (appFile != null && appFile.isDirectory()) {
         //第一步：如果是文件目录,读取文件夹，把文件夹里需要上传的apk按照规范处理好
         List<ApkFileInfo> apkFileInfoList = readAppFileDirectory(appFile);
-        //第二步:查看是否有apk数据，如果有执行串行上传任务
+/*        //第二步:查看是否有apk数据，如果有执行串行上传任务
         if (apkFileInfoList != null && apkFileInfoList.size() > 0) {
           startUpload(apkFileInfoList);
-        }
+        }*/
       } else {
         System.err.println(APP_TAG + "apkfile(" + FILE_APK + ") is error please check ");
       }
@@ -181,7 +181,7 @@ public class ReleaseMainKit {
             apkFileInfo.setChannelID(s[j]);
           }
         }
-        String newFileName = "dog-" + apkFileInfo.getChannelID() + ".apk";
+        String newFileName = "fastcleanmaster-" + apkFileInfo.getChannelID() + ".apk";
         newDirectoryPath = FILE_APK_ROOT + "/" + apkFileInfo.getVersionCode() + "apk";
         File newDirectoryFile = new File(newDirectoryPath);
         if (!newDirectoryFile.exists()) {
